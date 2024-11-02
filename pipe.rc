@@ -1,0 +1,7 @@
+# run code
+
+./a.out -a -k 6
+./a.out -a -k b
+
+# comment is supported
+./a.out -k 3
