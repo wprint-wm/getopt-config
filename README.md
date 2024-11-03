@@ -10,6 +10,7 @@ No dependencies, only use system function to parse config.
 - shell process call processes with options
 - processes use `getenv` to tell which side they are
 - processes use `getopt` to parse options and write result to STDOUT
+- processes use `signal` to mark write done
 
 ## Example
 
@@ -23,5 +24,11 @@ $ PIPE_CONFIG=pipe.rc ./a.out
 [server] > read done, have read 3, size 2
 [server] > pipe close
 [server] > all read done, have read 3 key config
+```
+
+## Tips
+
+```
+$ valgrind -q --trace-children=yes
 ```
 
