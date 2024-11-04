@@ -1,7 +1,8 @@
 # run code
 
-./a.out -a -k 6
-./a.out -a -k b
+./a.out -a -k 1
+./a.out -a -k 2
 
+sleep 0.2
 # comment is supported
 ./a.out -k 3

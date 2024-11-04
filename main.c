@@ -77,9 +77,12 @@ int main(int argc, char *argv[]) {
   int have_read = 0;
   signal(SIGUSR1, void_signal);
   do {
-    sleep(1);
+    /* sleep(1); */
+    int rc = usleep(100000);
     nbytes = read(piperw[0], buffer, 1024);
-    if (nbytes == 0) {
+    // we need to be awakened by a signal
+    // if sound sleep, context is unreliable
+    if (nbytes == 0 || rc == 0) {
       printf("[server] > pipe close\n");
       break;
     }
